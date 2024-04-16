@@ -2,6 +2,8 @@ Using your environment credentials for GitHub and your Azure Workshop Environmen
 
 1. Fork the repo at ```https://github.com/DevExpGbb/azure-openai```
 2. Start a GitHub Codespace
+2. go to the ```Lab/python/src``` folder
+3. In your ```.env``` file enter in the required configuration infor for your Azure OpenAI credentials (copy/rename the ```.env.example``` file)
 3. In your ```.env``` file enter in the required configuration infor for your Azure OpenAI credentials
 4. Install the latest OpenAI SDK (e.g. ```openai==1.19.0``` @ April 15 2024)
 5. Open your ```program.python``` file and start editing

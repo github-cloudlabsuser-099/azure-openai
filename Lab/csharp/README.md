@@ -2,7 +2,8 @@ Using your environment credentials for GitHub and your Azure Workshop Environmen
 
 1. Fork the repo at ```https://github.com/DevExpGbb/azure-openai```
 2. Start a GitHub Codespace
-3. In your ```appsettings.json``` file enter in the required configuration infor for your Azure OpenAI credentials
+2. go to the ```Lab/csharp/src``` folder
+3. In your ```appsettings.json``` file enter in the required configuration infor for your Azure OpenAI credentials (copy/rename the ```appsettings.json.example``` file)
 4. Install the latest Azure OpenAI SDK (e.g. ```--version 1.0.0-beta.16``` @ April 15 2024)
 5. Open your ```Program.cs``` file and start editing
 5. Ensure your are importing/using the correct namespcae for the SDK (e.g. ```using Azure.AI.OpenAI```)
