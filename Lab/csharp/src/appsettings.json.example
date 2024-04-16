@@ -1,5 +1,5 @@
 {
-    "AzureOAIEndpoint": "",
-    "AzureOAIKey": "",
-    "AzureOAIDeploymentName": ""
+    "AzureOAIEndpoint": "https://goa-acsal-openai-dev.openai.azure.com/",
+    "AzureOAIKey": "3a9a45ece4ca473e88d1de6935259712",
+    "AzureOAIDeploymentName": "goa-acsal-openai-dev-gpt4"
 }
