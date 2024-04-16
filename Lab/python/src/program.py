@@ -29,7 +29,18 @@ def main():
                 api_version="2023-05-15"
                 )
 
-        # Implement Code
+        # Send request to Azure OpenAI model
+        response = client.chat.completions.create(
+            model=azure_oai_deployment,
+            temperature=0.7,
+            max_tokens=120,
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": "Summarize the following text in 20 words or less:\n" + text}
+            ]
+        )
+
+        print("Summary: " + response.choices[0].message.content + "\n")
 
     except Exception as ex:
         print(ex)

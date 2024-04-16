@@ -40,8 +40,36 @@ do {
     
 } while (true);
     
-// Implement a version of GetSummaryFromOpenAI
 void GetSummaryFromOpenAI(string text)  
 {   
+    Console.WriteLine("\nSending request for summary to Azure OpenAI endpoint...\n\n");
 
-}
+    if(string.IsNullOrEmpty(oaiEndpoint) || string.IsNullOrEmpty(oaiKey) || string.IsNullOrEmpty(oaiDeploymentName) )
+    {
+        Console.WriteLine("Please check your appsettings.json file for missing or incorrect values.");
+        return;
+    }
+
+    // Add code to build request...
+    // Initialize the Azure OpenAI client
+    OpenAIClient client = new OpenAIClient(new Uri(oaiEndpoint), new AzureKeyCredential(oaiKey));
+
+    // Build completion options object
+    ChatCompletionsOptions chatCompletionsOptions = new ChatCompletionsOptions()
+    {
+        Messages =
+        {
+            new ChatRequestSystemMessage("You are a helpful assistant.  Please provide information about the following User Input and keep it to 20 words or less."),
+            new ChatRequestUserMessage("User Input: \n" + text),
+        },
+        MaxTokens = 120,
+        Temperature = 0.7f,
+        DeploymentName = oaiDeploymentName
+    };
+
+    // Send request to Azure OpenAI model
+    ChatCompletions response = client.GetChatCompletions(chatCompletionsOptions);
+    string completion = response.Choices[0].Message.Content;
+
+    Console.WriteLine("Summary: " + completion + "\n");
+}  
